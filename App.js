@@ -3,77 +3,43 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Container, Header, Body, Title, Content, Footer, Root } from "native-base";
+import { StackNavigator } from "react-navigation";
 
-import Camera from 'react-native-camera';
+import Home from './screens/Home';
+import Person from './screens/Person';
+import Item from './screens/Item';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const AppNavigator = StackNavigator(
+  {
+    Home: { screen: Home },
+    Person: { screen: Person },
+    Item: { screen: Item }
+  },
+  {
+    headerMode: 'none',
+  }
+);
 
 export default class App extends Component<{}> {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      data: ''
-    }
-  }
   render() {
     return (
-      <View style={styles.container}>
-        <Camera
-          ref={(cam) => {
-            this.camera = cam;
-          }}
-      	  onBarCodeRead={this.onBarCodeRead.bind(this)}
-          style={styles.preview}
-          aspect={Camera.constants.Aspect.fill}>
-
-        </Camera>
-        <Text>Data: {this.state.data}</Text>
-      </View>
+      <Root>
+        <Container>
+          <Header
+            style={{ backgroundColor: '#00b894' }}
+            iosBarStyle='light-content'
+            >
+            <Body>
+              <Title style={{ color: 'white' }}>Christmas List</Title>
+            </Body>
+          </Header>
+          <Content style={{ backgroundColor: 'white' }}>
+            <AppNavigator />
+          </Content>
+        </Container>
+      </Root>
     );
-  }
-
-  onBarCodeRead(e) {
-    console.log(
-        "Barcode Found!",
-        "Type: " + e.type + "\nData: " + e.data
-    );
-
-    this.setState({ data: e.data });
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  preview: {
-    // flex: 1,
-    height: 400,
-    // width: 200,
-    justifyContent: 'flex-end',
-    alignItems: 'center'
-  },
-  capture: {
-    flex: 0,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    color: '#000',
-    padding: 10,
-    margin: 40
-  }
-});
