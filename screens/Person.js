@@ -50,7 +50,7 @@ export default class Person extends Component<{}> {
     }
 
     return (
-      <View style={{ flex: 1, paddingTop: 20, justifyContent: 'space-between', alignItems: 'stretch'}}>
+      <View style={{ flex: 1, paddingTop: 20, justifyContent: 'space-between', alignItems: 'stretch', backgroundColor: '#fff'}}>
         <View style={{ marginBottom: 55}}>
           <Title>Add a Person</Title>
         </View>

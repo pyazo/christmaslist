@@ -41,7 +41,6 @@
 		527A6EAD88AF479F8FB57800 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0C29C7955ED042A0B20374A4 /* MaterialIcons.ttf */; };
 		538673FC19EF4B2395EDD131 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2F1DD6D657B4BF2B4DD5560 /* SimpleLineIcons.ttf */; };
 		5B02405012A14578BA4BB11C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C31F8081DD54B29941130B6 /* FontAwesome.ttf */; };
-		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		68C38A89C90647C58DDC6BFD /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 393D63F8E8CC45F99E156760 /* Ionicons.ttf */; };
 		68E9DE95624F43F7BD0D7B45 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6E6AE744EC4CAFA022F3F4 /* libRCTCamera.a */; };
 		7429B8926ED74FE3AABE00B1 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD780EBE93D94450BD14FAC2 /* rubicon-icon-font.ttf */; };
@@ -61,8 +60,8 @@
 		EB7E4EF4BB434E7DB9A003A2 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3ED339405E9F4FB290ABA09C /* Foundation.ttf */; };
 		EC334C5681AF4188A3D48BB8 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A5236A96A93744C68B6D3502 /* Entypo.ttf */; };
 		F2F94CEADD034840BED2DB96 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 032032BF8A8D45B2B4C49BA5 /* Roboto.ttf */; };
-		F31D164C201A95A500CD0988 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F31D1624201A95A500CD0988 /* Fonts */; };
 		F31D164E201A95BA00CD0988 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = F31D164D201A95BA00CD0988 /* Fonts */; };
+		F34AA0ED205C4A3400A43492 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		F90FBB84BE114AD0A04B743C /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE8CEDAC3B534F5887AAB6E7 /* SimpleLineIcons.ttf */; };
 /* End PBXBuildFile section */
 
@@ -428,9 +427,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
-				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
+				F34AA0ED205C4A3400A43492 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
-				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
@@ -816,7 +814,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 610;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -1210,7 +1208,6 @@
 				F31D164E201A95BA00CD0988 /* Fonts in Resources */,
 				9786C3B13A934326A504CA55 /* EvilIcons.ttf in Resources */,
 				5B02405012A14578BA4BB11C /* FontAwesome.ttf in Resources */,
-				F31D164C201A95A500CD0988 /* Fonts in Resources */,
 				1BB30BD6B1B0459BA5D3AF8E /* Foundation.ttf in Resources */,
 				68C38A89C90647C58DDC6BFD /* Ionicons.ttf in Resources */,
 				527A6EAD88AF479F8FB57800 /* MaterialIcons.ttf in Resources */,
@@ -1370,6 +1367,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/christmaslist.app/christmaslist";
 			};
@@ -1397,6 +1395,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/christmaslist.app/christmaslist";
 			};
@@ -1421,6 +1420,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = christmaslist;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1445,6 +1445,7 @@
 					"-ObjC",
 					"-lc++",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = christmaslist;
 				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1583,20 +1584,30 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1624,13 +1635,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1638,6 +1657,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

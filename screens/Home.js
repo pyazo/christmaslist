@@ -85,7 +85,7 @@ export default class Home extends Component<{}> {
     const { editing, text, people } = this.state;
     const { width, height } = Dimensions.get('window');
     return (
-      <View style={{ height }}>
+      <View style={{ height, backgroundColor: '#fff' }}>
         {
           !Object.keys(people).length &&
           <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>

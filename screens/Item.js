@@ -95,7 +95,7 @@ export default class Item extends Component<{}> {
     const { height } = Dimensions.get('window');
 
     return (
-      <View>
+      <View style={{ backgroundColor: '#fff' }}>
         <Camera
             ref={(cam) => {
               this.camera = cam;
