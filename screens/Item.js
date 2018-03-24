@@ -16,7 +16,9 @@ export default class Item extends Component<{}> {
 
       const exists = this.checkCurrentList(e.data);
 
-      if (!exists) {
+      console.log(names);
+
+      if (!exists && names.length > 1) {
         ActionSheet.show(
           {
             options: names,
@@ -43,6 +45,15 @@ export default class Item extends Component<{}> {
 
             setTimeout(() => this.setState({ processing: false }), 1000)
           }
+        );
+      } else if (!names.length > 1) {
+        Alert.alert(
+          'No people!',
+          'Please add people before you scan items.',
+          [
+            { text: 'Cancel', onPress: () => { setTimeout(() => this.setState({ processing: false }), 1000) }, style: 'cancel' },
+            { text: 'Ok', onPress: () => { setTimeout(() => this.setState({ processing: false }), 1000) } }
+          ]
         )
       }
     }

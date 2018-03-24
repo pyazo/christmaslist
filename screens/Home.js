@@ -30,20 +30,28 @@ export default class Home extends Component<{}> {
     } catch (err) { console.error(err) }
   }
 
-  openActionBar = () => {
-    const { navigation } = this.props;
-    const { people } = this.state;
+  openActionBar = async () => {
+    try {
 
-    const BUTTONS = ['Person', 'Item', 'Cancel'];
+      await this.getPeople();
 
-    ActionSheet.show(
-      {
-        options: BUTTONS,
-        cancelButtonIndex: 2,
-        title: 'What would you like to add?'
-      },
-      index => navigation.navigate(BUTTONS[index], { people })
-    )
+      const { navigation } = this.props;
+      const { people } = this.state;
+
+      const BUTTONS = ['Person', 'Item', 'Cancel'];
+
+      ActionSheet.show(
+        {
+          options: BUTTONS,
+          cancelButtonIndex: 2,
+          title: 'What would you like to add?'
+        },
+        index => navigation.navigate(BUTTONS[index], { people })
+      )
+
+    } catch(err) {
+      console.error(err);
+    }
   }
 
   changeText = text => this.setState({ text });
