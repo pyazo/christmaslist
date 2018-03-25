@@ -122,6 +122,7 @@ export default class Home extends Component<{}> {
 
         {
           !!Object.keys(people).length &&
+          <View style={{ height: height - 300, marginBottom: 60 }}>
           <List
             dataSource={this.ds.cloneWithRows(Object.keys(people))}
             renderRow={data =>
@@ -144,13 +145,14 @@ export default class Home extends Component<{}> {
             leftOpenValue={75}
             rightOpenValue={-75}
             style={{
-              backgroundColor: '#fff'
+              backgroundColor: '#fff',
             }}
           />
+          </View>
         }
         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-          <Button iconLeft onPress={this.openActionBar} style={{ width: 55, height: 55 }} info>
-            <Icon name='add' style={{ fontSize: 45 }} />
+          <Button iconLeft onPress={this.openActionBar} style={{ width: 60, height: 60 }} info>
+            <Icon name='add' style={{ fontSize: 50 }} />
           </Button>
         </View>
       </View>
