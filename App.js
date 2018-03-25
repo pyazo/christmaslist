@@ -18,7 +18,7 @@ const AppNavigator = StackNavigator(
     Item: { screen: Item }
   },
   {
-    headerMode: 'none',
+    headerMode: 'none'
   }
 );
 

@@ -91,7 +91,7 @@ export default class Item extends Component<{}> {
   backToHome = () => {
     const { navigation } = this.props;
 
-    navigation.navigate('Home');
+    navigation.popToTop();
 
   }
 

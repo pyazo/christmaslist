@@ -6,7 +6,7 @@
 
 import React, { Component } from 'react';
 import { View, Dimensions, AsyncStorage, ListView } from 'react-native';
-import { Container, Header, Body, Button, Icon, Text, Title, Form, Item, Input, Label, List, ListItem, Right, ActionSheet } from 'native-base';
+import { Container, Header, Body, Button, Icon, Text, Title, Form, Item, Input, Label, List, ListItem, Right, ActionSheet, Spinner } from 'native-base';
 
 export default class Home extends Component<{}> {
 
@@ -14,6 +14,7 @@ export default class Home extends Component<{}> {
     editing: false,
     text: '',
     people: {},
+    loading: true,
   }
 
   save = async () => {
@@ -67,7 +68,7 @@ export default class Home extends Component<{}> {
         if (arr[0].split(':')[1].length > 0) keysObj[arr[0].split(':')[1]] = JSON.parse(arr[1]);
       });
 
-      this.setState({ people: keysObj });
+      this.setState({ people: keysObj, loading: false });
 
     } catch (err) { console.error(err) }
   }
@@ -86,12 +87,28 @@ export default class Home extends Component<{}> {
   }
 
   componentDidMount() {
+    const { navigation } = this.props;
+    this.getPeople();
+
+    navigation.addListener('willFocus', payload => {
+      this.setState({ loading: true });
       this.getPeople();
+    })
+
   }
 
   render() {
-    const { editing, text, people } = this.state;
+    const { editing, text, people, loading } = this.state;
     const { width, height } = Dimensions.get('window');
+
+    if (loading) {
+      return (
+        <View style={{ height, backgroundColor: '#fff' }}>
+          <Spinner />
+        </View>
+      )
+    }
+
     return (
       <View style={{ height, backgroundColor: '#fff' }}>
         {
@@ -108,7 +125,7 @@ export default class Home extends Component<{}> {
           <List
             dataSource={this.ds.cloneWithRows(Object.keys(people))}
             renderRow={data =>
-              <ListItem>
+              <ListItem style={{ backgroundColor: '#fff' }}>
                 <Body>
                   <Text> {data} </Text>
                 </Body>
@@ -126,6 +143,9 @@ export default class Home extends Component<{}> {
               </Button>}
             leftOpenValue={75}
             rightOpenValue={-75}
+            style={{
+              backgroundColor: '#fff'
+            }}
           />
         }
         <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>

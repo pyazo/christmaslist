@@ -20,7 +20,7 @@ export default class Person extends Component<{}> {
   backToHome = () => {
     const { navigation } = this.props;
 
-    navigation.navigate('Home');
+    navigation.popToTop();
   }
 
   savePerson = async () => {
@@ -29,7 +29,7 @@ export default class Person extends Component<{}> {
 
     try {
       await AsyncStorage.setItem(`@christmaslist:${name}`, JSON.stringify({ shirtSize, pantsSize, shoeSize, items: [] }));
-      navigation.navigate('Home');
+      navigation.popToTop();
     } catch (err) { console.error(err) }
   }
 
@@ -51,7 +51,7 @@ export default class Person extends Component<{}> {
 
     return (
       <View style={{ flex: 1, paddingTop: 20, justifyContent: 'space-between', alignItems: 'stretch', backgroundColor: '#fff'}}>
-        <View style={{ marginBottom: 55}}>
+        <View style={{ marginBottom: 55, backgroundColor: '#fff'}}>
           <Title>Add a Person</Title>
         </View>
         <Item regular style={inputStyle}>
